@@ -31,7 +31,7 @@ class Base(TorrentMagnetProvider):
 
             next_page = False
             url = self.urls['search'] % (movieTitle[:1], movieTitle, current_page)
-            data = self.getHTMLData(url)
+            data = self.getHTMLData(url, headers = {'Accept': '*'})
 
             if data:
                 html = BeautifulSoup(data)
